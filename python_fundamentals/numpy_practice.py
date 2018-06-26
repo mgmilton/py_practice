@@ -109,3 +109,45 @@ a.argmin()
 
 
 #Indexing and Slicing
+s = np.arange(13)**2
+s
+
+# Use bracket notation to get the value at a specific index. Remember that indexing starts at 0.
+s[0], s[4], s[-1]
+
+# Use : to indicate a range array[start:stop]
+# Leaving start or stop empty will default to the beginning/end of the array
+
+s[1:5]
+
+# Use negatives to count from the back.
+s[-4:]
+
+# A second : can be used to indecate step-size. array[start:stop:stepsize]
+# Here we are starting 5th element from the end, and counting backwards by 2 until the beginning of the array is reached
+
+s[-5::-2]
+
+# Multidimensional array
+r = np.arange(36)
+r.resize((6,6))
+r
+
+# Bracket notation to slice array[row, column]
+r[2,2]
+
+# And use : to select a range of rows or colums
+r[3, 3:6]
+
+#Here we are selecting all the rows up to (and not including) row 2, and all the columns up to (and not including) the last column.
+r[:2, :-1]
+
+# Slice the last row, and only every other element
+r[-1, ::2]
+
+#We can also perform conditional indexing. Here we are selecting values form the array that are greater than 30 (Also see np.where)
+r[r > 30]
+
+# Here we are assigning all values in the array that are greater than 30 to the value of 30
+r[r > 30] = 30
+r
