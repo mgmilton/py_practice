@@ -151,3 +151,45 @@ r[r > 30]
 # Here we are assigning all values in the array that are greater than 30 to the value of 30
 r[r > 30] = 30
 r
+
+# Copying Data - be careful when copying and modifying arrays in NumPy
+r2 = r[:3,:3]
+r2
+
+# Set this slice's values to zero([:] selects the entire array)
+r2[:] = 0
+print(r2)
+
+print(r)
+
+#To avoid this, use r.copy to create a copy that will not affect the original array
+r_copy = r.copy()
+r_copy
+
+#Now when r_copy is modified, r will not be changed
+r_copy[:] = 10
+print(r_copy, '\n')
+print(r)
+
+# Iterating Over Arrays
+test = np.random.randint(0, 10, (4,3))
+test
+
+# Iterate by row
+for row in test:
+    print(row)
+
+# Iterate by index
+for i in range(len(test)):
+    print(test[i])
+
+# Iterate by rown and index
+for i, row in enumerate(test):
+    print('row', i, 'is', row)
+
+# Use zip to iterate over multiple iterables
+test2 = test**2
+test2
+
+for i, j in zip(test, test2):
+    print(i, '+', j, '=', i+j)
