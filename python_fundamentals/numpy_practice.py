@@ -56,3 +56,43 @@ np.repeat([1,2,3], 3)
 # Combining Arrays
 p = np.ones([2,3], int)
 p
+
+
+# Use vstack to stack arrays in sequence vertically (row wise)
+np.vstack([p, 2*p])
+
+# Use hstack to stack arrays in sequence horizontally (column wise)
+np.hstack([p, 2*p])
+
+# Use +, -, *, / and ** to perform element wise addition, subtraction, multiplication, division and power.
+
+print(x + y) # elementwise addition [1 2 3] + [4 5 6] = [5 7 9]
+print(x - y) # elementwise substraction [1 2 3] - [4 5 6] = [-3 -3 -3]
+
+print(x * y) # elementwise multiplication  [1 2 3] * [4 5 6] = [4  10  18]
+print(x / y) # elementwise divison         [1 2 3] / [4 5 6] = [0.25  0.4  0.5]
+
+print(x**2) # elementwise power [1, 2, 3] ^ 2 = [1, 4, 9]
+
+# Dot product
+x.dot(y) # dot product 1*4 + 2*5 + 3*6
+
+
+# Transposing arrays
+z = np.array([y, y**2])
+z
+
+# The shape of array z is (2, 3) before transposing
+z.shape
+
+# Use .T to get the transpose
+z.T
+
+z.T.shape # the number of rows has swapped with the number of columns
+z.dtype # Use .dtype to see the data type of the elements in the array
+
+#Use .astype to cast a specific type
+z = z.astype('f')
+z.dtype
+
+# Built in Math Functions
