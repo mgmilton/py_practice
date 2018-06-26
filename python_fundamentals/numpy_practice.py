@@ -96,3 +96,16 @@ z = z.astype('f')
 z.dtype
 
 # Built in Math Functions
+a = np.array([-4, -2, 1, 3, 5])
+a.sum()
+a.max()
+a.min()
+a.mean()
+a.std()
+
+# to return the index of max or minimum value use argmax or argmin
+a.argmax()
+a.argmin()
+
+
+#Indexing and Slicing
