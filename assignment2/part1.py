@@ -47,7 +47,8 @@ def answer_two():
 # This function should return a single string value.
 #
 def answer_three():
-    return ((df['Gold'] - df['Gold.1']) / (df['Gold'] + df['Gold.1'] + df['Gold.2'])).idxmax()
+    data = df[(df['Gold'] >= 1) & (df['Gold.1'] >= 1)]
+    return ((data['Gold'] - data['Gold.1']).abs()/ (data['Gold'] + data['Gold.1'] + data['Gold.2'])).idxmax()
 
 
 # Question 4
