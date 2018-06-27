@@ -56,5 +56,5 @@ def answer_three():
 # This function should return a Series named Points of length 146
 
 def answer_four():
-    points = pd.Series(df['Gold']*3 + df['Silver.2']*2 + df['Bronze.2'])
+    points = pd.Series(df['Gold.2']*3 + df['Silver.2']*2 + df['Bronze.2'])
     return points
