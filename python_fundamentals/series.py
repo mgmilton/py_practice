@@ -36,3 +36,20 @@ sports = {'Archery': 'Bhutan',
           'Taekwondo': 'South Korea'}
 s = pd.Series(sports, index=['Golf', 'Sumo', 'Hockey'])
 print(s)
+
+# Querying a Series
+
+sports = {'Archery': 'Bhutan',
+          'Golf': 'Scotland',
+          'Sumo': 'Japan',
+          'Taekwondo': 'South Korea'}
+s = pd.Series(sports)
+s
+
+s.iloc[3] # returns South Korea
+
+s.loc['Golf'] # returns Scotland
+
+s[3] #returns South Korea
+
+s['Golf'] # returns Scotland
