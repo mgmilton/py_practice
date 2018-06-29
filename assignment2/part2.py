@@ -35,34 +35,7 @@ def answer_six():
 
 
 def answer_seven():
-    class CensusVariables:
-        state_name = "STNAME"
-        county_name = "CTYNAME"
-        census_population = "CENSUS2010POP"
-        region = "REGION"
-        population_2014 = "POPESTIMATE2014"
-        population_2015 = "POPESTIMATE2015"
-        population_estimates = ["POPESTIMATE2010",
-    			    "POPESTIMATE2011",
-    			    "POPESTIMATE2012",
-    			    "POPESTIMATE2013",
-    			    population_2014,
-    			    population_2015]
-        county_level = 50
-        summary_level = "SUMLEV"
 
-    counties = census_df[census_df[
-        CensusVariables.summary_level]==CensusVariables.county_level]
-    counties = counties.reset_index()
-
-    return counties.iloc[
-	(counties[
-	    CensusVariables.population_estimates].max(axis=1) -
-	 counties[
-	     CensusVariables.population_estimates].min(axis=1)
-	).idxmax()][CensusVariables.county_name]
-
-print(answer_seven())
 
 
 # Question 8
@@ -74,30 +47,3 @@ print(answer_seven())
 
 
 def answer_eight():
-    class CensusVariables:
-        state_name = "STNAME"
-        county_name = "CTYNAME"
-        census_population = "CENSUS2010POP"
-        region = "REGION"
-        population_2014 = "POPESTIMATE2014"
-        population_2015 = "POPESTIMATE2015"
-        population_estimates = ["POPESTIMATE2010",
-    			    "POPESTIMATE2011",
-    			    "POPESTIMATE2012",
-    			    "POPESTIMATE2013",
-    			    population_2014,
-    			    population_2015]
-        county_level = 50
-        summary_level = "SUMLEV"
-
-    counties_original_index = census_df[census_df[
-        CensusVariables.summary_level]==CensusVariables.county_level]
-    regions = counties_original_index[
-	(counties_original_index[CensusVariables.region]==1) |
-	(counties_original_index[CensusVariables.region]==2)]
-    washingtons = regions[
-	regions[CensusVariables.county_name].str.startswith("Washington")]
-    grew = washingtons[washingtons[CensusVariables.population_2015] >
-		       washingtons[CensusVariables.population_2014]]
-    return grew[[CensusVariables.state_name,
-		 CensusVariables.county_name]]
