@@ -23,13 +23,3 @@ def answer_six():
     return census_df[(census_df['SUMLEV'] == 50)].groupby('STNAME')['CENSUS2010POP'].apply(
     lambda x: x.nlargest(3).sum()).nlargest(
     3).index.values.tolist()
-
-
-
-
-
-
-def a 5x2 DataFrame with the columns = ['STNAME', 'CTYNAME'] and the same index ID as the census_df (sorted ascending by index)
-
-
-def answer_eight():
