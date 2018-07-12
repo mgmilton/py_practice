@@ -14,10 +14,7 @@ def answer_five():
     return census_df[(census_df['SUMLEV'] == 50)].groupby('STNAME')['COUNTY'].nunique().idxmax()
 
 
-# Question 6
-# Only looking at the three most populous counties for each state, what are the three most populous states (in order of highest population to lowest population)? Use CENSUS2010POP.
-#
-# This function should return a list of string values.
+
 
 def answer_six():
     return census_df[(census_df['SUMLEV'] == 50)].groupby('STNAME')['CENSUS2010POP'].apply(
