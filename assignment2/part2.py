@@ -6,10 +6,6 @@ census_df.set_index(['STNAME', 'CTYNAME'])
 
 #Question 5
 
-# Which state has the most counties in it? (hint: consider the sumlevel key carefully! You'll need this for future questions too...)
-#
-# This function should return a single string value.
-
 def answer_five():
     return census_df[(census_df['SUMLEV'] == 50)].groupby('STNAME')['COUNTY'].nunique().idxmax()
 
